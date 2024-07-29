@@ -1,0 +1,587 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  justify-items: center;
+  align-items: center;
+}
+
+button {
+  width: 250px;
+  height: 150px;
+}
+
+/*first button */
+.firstButton {
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #333;
+  border-top: 2px solid #584545;
+  border-bottom: 2px solid #7c1c1c;
+  padding: 10px;
+  letter-spacing: 2px;
+  transition: all 0.25s;
+}
+
+.firstButton:hover {
+  letter-spacing: 15px;
+}
+
+/*second button */
+
+.secondButton {
+  display: block;
+  width: 250px;
+  height: 50px;
+  line-height: 46px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 50px;
+  border: 3px solid slateblue;
+  color: slateblue;
+  font-size: 20px;
+  font-family: arial;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  text-transform: uppercase;
+  transition: all 0.35s;
+}
+
+.secondButton:before,
+.secondButton:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: -100%;
+  left: 0;
+  background: slateblue;
+  z-index: -1;
+  transition: all 0.35s;
+}
+
+.secondButton:before {
+  opacity: 0.5;
+}
+
+.secondButton:after {
+  transition-delay: 0.2s;
+}
+
+.secondButton:hover {
+  color: #fff;
+}
+
+.secondButton:hover:before,
+.secondButton:hover:after {
+  top: 0;
+}
+
+/*third button*/
+
+.thirdButton {
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.thirdButton::before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+.thirdButton:active {
+  color: #000;
+}
+
+.thirdButton:active:after {
+  background: transparent;
+}
+
+.thirdButton:hover:before {
+  opacity: 1;
+}
+
+.thirdButton:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/*button four*/
+
+.forthButton {
+  position: relative;
+  display: block;
+  color: black;
+  font-size: 14px;
+  font-family: "montserrat";
+  text-decoration: none;
+  margin: 30px 0;
+  border: 2px solid #ff7675;
+  padding: 14px 60px;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 1s all ease;
+}
+
+.forthButton::before {
+  background: #ff7675;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  transition: all 0.6s ease;
+}
+
+.forthButton::before {
+  width: 100%;
+  height: 0%;
+}
+.forthButton:hover::before {
+  height: 100%;
+}
+
+/*button five */
+
+.fifthButton {
+  border-color: #3498db;
+  color: black;
+  box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+  border-radius: 10px;
+}
+.fifthButton:hover {
+  box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+}
+
+/*button six*/
+
+.sixthButton {
+  background-color: transparent;
+  border: 3px solid #11cc0a;
+  border-radius: 50px;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  color: #11cc0a;
+}
+.sixthButton:hover {
+  box-shadow: 0 0 10px 0 #11cc0a inset, 0 0 20px 2px #11cc0a;
+  border: 3px solid #11cc0a;
+}
+
+/*button seven*/
+
+.seventhButton {
+  transform: translate(0%, 0%);
+  text-decoration: none;
+  text-transform: uppercase;
+  background: #262626;
+  width: 150px;
+  height: 60px;
+  line-height: 60px;
+  color: #fff;
+  padding: 0px 10px;
+  letter-spacing: 5px;
+  text-align: center;
+  font-size: 20px;
+  transition: 0.5;
+  overflow: hidden;
+}
+
+.seventhButton:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  background: #f00;
+  z-index: -1;
+  transition: 1s;
+  border-style: solid;
+  border-color: rgb(126, 55, 55);
+  border-width: 80px 100px;
+  transform: rotate(360deg);
+  transform-origin: top left;
+}
+
+.seventhButton:hover:before {
+  border-color: rgb(60, 128, 168);
+  transform: rotate(40deg);
+}
+
+.seventhButton:hover {
+  color: #ff0;
+  transition: 0.5s;
+  transition-delay: 0.3s;
+}
+
+/*eighth button*/
+
+.eightButton {
+  margin: 15px auto;
+  font-family: "Montserrat";
+  font-size: 20px;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 100px;
+  padding: 15px 20px;
+  border: 0px solid #000;
+}
+
+.eightButton {
+  animation: borderPulse 1000ms infinite ease-out,
+    colorShift 10000ms infinite ease-in;
+}
+
+.eightButton {
+  animation: colorShift 10000ms infinite ease-in;
+}
+
+.eightButton:hover,
+.eightButton:focus {
+  animation: borderPulse 1000ms infinite ease-out,
+    colorShift 10000ms infinite ease-in, hoverShine 200ms;
+}
+
+@keyframes colorShift {
+  0%,
+  100% {
+    background: #0045e6;
+  }
+  33% {
+    background: #fb3e3e;
+  }
+  66% {
+    background: #0dcc00;
+  }
+}
+
+@keyframes borderPulse {
+  0% {
+    box-shadow: inset 0px 0px 0px 5px rgba(255, 255, 255, 0.4),
+      0px 0px 0px 0px rgba(255, 255, 255, 1);
+  }
+  100% {
+    box-shadow: inset 0px 0px 0px 3px rgba(117, 117, 255, 0.2),
+      0px 0px 0px 10px rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes hoverShine {
+  0% {
+    background-image: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(255, 255, 255, 0) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+  50% {
+    background-image: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+  100% {
+    background-image: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0) 50%,
+      rgba(255, 255, 255, 0.4) 100%
+    );
+  }
+}
+
+/*button nine*/
+
+.ninthButton {
+  border-radius: 4px;
+  background-color: #92902d;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-size: 32px;
+  padding: 16px;
+  width: 220px;
+  height: 80px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 36px;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.7);
+}
+
+.ninthButton {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.ninthButton:after {
+  content: "»";
+  position: absolute;
+  opacity: 0;
+  top: 20px;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.ninthButton:hover {
+  padding-right: 24px;
+  padding-left: 8px;
+}
+
+.ninthButton:hover:after {
+  opacity: 1;
+  right: 10px;
+}
+
+/*button ten*/
+
+.tenthButton {
+  transition: all 0.5s ease;
+  color: #200a0a;
+  border: 3px solid white;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+  font-size: 17px;
+  background-color: transparent;
+  padding: 10px;
+  outline: none;
+  border-radius: 20px;
+  border: 1px solid #12828a;
+}
+.tenthButton:hover {
+  color: #001f3f;
+  background-color: #12828a;
+}
+
+/*button eleven*/
+
+.eleventhButton {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+.eleventhButton {
+  background-color: #f0ecfc;
+  background-image: linear-gradient(315deg, #f0ecfc 0%, #c797eb 74%);
+  line-height: 42px;
+  padding: 0;
+  border: none;
+}
+.eleventhButton span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.eleventhButton:before,
+.eleventhButton:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  background: #c797eb;
+  transition: all 0.3s ease;
+}
+.eleventhButton:before {
+  height: 0%;
+  width: 2px;
+}
+.eleventhButton:after {
+  width: 0%;
+  height: 2px;
+}
+.eleventhButton:hover:before {
+  height: 100%;
+}
+.eleventhButton:hover:after {
+  width: 100%;
+}
+.eleventhButton:hover {
+  background: transparent;
+}
+.eleventhButton span:hover {
+  color: #c797eb;
+}
+.eleventhButton span:before,
+.eleventhButton span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background: #c797eb;
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.5),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3);
+  transition: all 0.3s ease;
+}
+.eleventhButton span:before {
+  width: 2px;
+  height: 0%;
+}
+.eleventhButton span:after {
+  height: 2px;
+  width: 0%;
+}
+.eleventhButton span:hover:before {
+  height: 100%;
+}
+.eleventhButton span:hover:after {
+  width: 100%;
+}
+
+/*button twelve*/
+
+.twelfthButton {
+  padding: 0.5em 1em;
+  background-color: #0ebac5;
+  border: none;
+  user-select: none;
+  cursor: pointer;
+  font-size: 20px;
+  text-transform: uppercase;
+  transition: all 0.5s linear;
+  color: #fff;
+  position: relative;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.twelfthButton:hover::after,
+.twelfthButton:hover::before {
+  content: "";
+  background: linear-gradient(90deg, #fc466b 0%, #3f5efb 100%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  animation: move-right-side 1s ease infinite;
+}
+
+.twelfthButton:hover::before {
+  background: linear-gradient(90deg, #00c9ff 0%, #92fe9d 100%);
+  inset: 0;
+  animation: move-left-side 1s ease infinite;
+  z-index: -2;
+}
+
+.twelfthButton:hover {
+  background-color: #fff;
+  color: #00c9ff;
+}
+
+@keyframes move-right-side {
+  0% {
+    inset: 0.3em 0 0 0.3em; /*top | left */
+  }
+
+  33% {
+    inset: 0 0.3em 0.3em 0; /*right| bottom*/
+  }
+
+  66% {
+    inset: 1em 0 0 0.5em; /*top | right */
+  }
+
+  100% {
+    inset: 0 1em 0.5em 0;
+  }
+}
+
+/* Move left Side */
+
+@keyframes move-left-side {
+  0% {
+    right: -1em;
+    top: -0.5em;
+  }
+
+  33% {
+    bottom: -1em;
+    left: -0.5em;
+  }
+
+  66% {
+    top: 0;
+    right: -0.7;
+  }
+
+  100% {
+    right: -1em;
+    top: -0.5em;
+  }
+}
